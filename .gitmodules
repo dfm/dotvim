@@ -2,3 +2,7 @@
 	path = bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
 	ignore = dirty
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = http://github.com/ervandew/supertab.git
+	ignore = dirty
