@@ -11,6 +11,14 @@ let mapleader=","
 command! W :w
 
 syntax on
+if has('gui_running')
+    set background=light
+    let g:solarized_termtrans=1
+    colorscheme solarized
+else
+    set background=dark
+endif
+
 filetype on
 filetype plugin indent on
 set autoindent

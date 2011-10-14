@@ -13,3 +13,8 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = http://github.com/msanders/snipmate.vim.git
+	ignore = dirty
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized.git
+	ignore = dirty
