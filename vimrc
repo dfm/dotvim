@@ -43,7 +43,7 @@ set autoread                " Automatically read saved files
 
 " Status line
 set laststatus=2            " Always show it
-set statusline=%<%f\ (%y)
+set statusline=%<%f\ %y
 
 " Tab completion in command mode
 set wildmenu
@@ -137,6 +137,13 @@ if has('gui_running')
 else
     set background=dark
 endif
+
+" TagList
+nnoremap <leader>t :TlistToggle<CR>
+set tags=./tags,tags                    " configure Ctags to use global project tags
+let Tlist_Auto_Open = 1                 " automatically open taglist
+let Tlist_Use_Right_Window = 1          " only open taglist on the right
+let Tlist_Exit_OnlyWindow = 1           " automatically close taglist when we close the window
 
 "
 " ==========
