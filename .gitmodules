@@ -10,3 +10,6 @@
 	path = bundle/pyflakes
 	url = http://github.com/mitechie/pyflakes-pathogen.git
 	ignore = dirty
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = http://github.com/msanders/snipmate.vim.git
