@@ -6,3 +6,7 @@
 	path = bundle/supertab
 	url = http://github.com/ervandew/supertab.git
 	ignore = dirty
+[submodule "bundle/pyflakes"]
+	path = bundle/pyflakes
+	url = http://github.com/mitechie/pyflakes-pathogen.git
+	ignore = dirty
