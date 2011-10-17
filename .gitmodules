@@ -21,7 +21,8 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = http://github.com/vim-scripts/taglist.vim
-    ignore = dirty
+	ignore = dirty
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
+	ignore = dirty

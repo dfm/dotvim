@@ -73,14 +73,12 @@ set incsearch               " Incrementally search while typing a /regex
 
 " Un-highlight search when we hit enter
 function! PressedEnter()
-    :nohlsearch
-
     if &filetype == 'python'
         " Update PyFlakes if it's a Python file
         :PyflakesUpdate
     end
 endfunction
-autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :call PressedEnter()<cr>
+autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch\|:call PressedEnter()<cr>
 
 "
 " =============================================
