@@ -73,12 +73,16 @@ set incsearch               " Incrementally search while typing a /regex
 
 " Un-highlight search when we hit enter
 function! PressedEnter()
+    nohlsearch |:nohlsearch
     if &filetype == 'python'
         " Update PyFlakes if it's a Python file
         :PyflakesUpdate
     end
 endfunction
-autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch\|:call PressedEnter()<cr>
+autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :call PressedEnter()<cr>
+
+" Clean up whitespace at the ends of lines before writing
+autocmd BufWritePre * :%s/\s\+$//e
 
 "
 " =============================================
@@ -141,7 +145,7 @@ nnoremap <leader>t :TlistToggle<CR>
 set tags=./tags;/                       " configure Ctags to use global project tags
 let Tlist_Use_Right_Window = 1          " only open taglist on the right
 let Tlist_Exit_OnlyWindow = 1           " automatically close taglist when we close the window
-
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 "
 " ==========
 " * Python *
