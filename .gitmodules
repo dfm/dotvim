@@ -26,3 +26,7 @@
 	path = bundle/vim-commentary
 	url = http://github.com/tpope/vim-commentary.git
 	ignore = dirty
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+	ignore = dirty
