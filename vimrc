@@ -160,3 +160,9 @@ augroup pythongroup
     " autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 augroup END
 
+
+"
+" Coffeescript
+"
+au BufWritePost *.coffee silent CoffeeMake!
+
