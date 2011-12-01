@@ -71,18 +71,24 @@ set smartcase               " unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
+" Spell check
+if v:version > 700 && has('gui_running')
+    set spell
+    setlocal spell spelllang=en_us
+endif
+
 " Un-highlight search when we hit enter
 function! PressedEnter()
-    nohlsearch |:nohlsearch
     if &filetype == 'python'
         " Update PyFlakes if it's a Python file
         :PyflakesUpdate
     end
 endfunction
-autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :call PressedEnter()<cr>
+autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch \|call PressedEnter()<cr>
 
 " Clean up whitespace at the ends of lines before writing
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufNewFile,BufRead *.less set filetype=css
 
 "
 " =============================================
@@ -113,9 +119,14 @@ noremap <Right> <nop>
 noremap <Up>    <nop>
 noremap <Down>  <nop>
 
-" Save current file by double clicking leader
-nnoremap <leader><leader> :w<cr>
-inoremap <leader><leader> <esc>:w<cr>
+" jump to beginning/end of lines
+noremap H ^
+noremap L g_
+
+" Save current file with ,.
+nnoremap <leader>. :w<cr>
+" Make with ,m
+nnoremap <leader>m :make<cr>
 
 "
 " ===========
@@ -160,9 +171,17 @@ augroup pythongroup
     " autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 augroup END
 
+"
+" ===============
+" * Coffeescript *
+" ================
+"
+au BufWritePost *.coffee CoffeeMake!
 
 "
-" Coffeescript
+" =========
+" * LaTeX *
+" =========
 "
-au BufWritePost *.coffee silent CoffeeMake!
+
 
