@@ -10,6 +10,12 @@ let mapleader=","
 " fuck yeah!
 command! W :w
 
+" No toolbar in the gui.
+set guioptions-=T
+
+" Fortran?
+let fortran_free_source=1
+
 syntax on
 filetype on
 filetype plugin indent on
@@ -177,11 +183,5 @@ augroup END
 " ================
 "
 au BufWritePost *.coffee CoffeeMake!
-
-"
-" =========
-" * LaTeX *
-" =========
-"
 
 
