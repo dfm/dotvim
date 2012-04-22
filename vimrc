@@ -155,13 +155,11 @@ map <leader>g :GundoToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
-if has('gui_running')
-    set background=light
-    let g:solarized_termtrans=1
-    colorscheme solarized
-else
-    set background=dark
-endif
+set background=dark
+" let g:solarized_termtrans=1
+colorscheme solarized
+" Solarized background strangeness fix
+highlight Normal ctermbg=none
 
 " TagList
 nnoremap <leader>t :TlistToggle<CR>
