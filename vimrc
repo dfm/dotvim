@@ -20,8 +20,14 @@ syntax on
 filetype on
 filetype plugin indent on
 set autoindent
-set number
-set numberwidth=1
+
+" Line numbers from @mynameisfiber.
+set numberwidth=3
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+highlight LineNr ctermbg=darkgrey
+
 set title
 set ruler
 set virtualedit=block
