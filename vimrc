@@ -23,9 +23,13 @@ set autoindent
 
 " Line numbers from @mynameisfiber.
 set numberwidth=3
-set relativenumber
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+if exists("&relativenumber")
+    set relativenumber
+    autocmd InsertEnter * :set number
+    autocmd InsertLeave * :set relativenumber
+else
+    set number
+endif
 highlight LineNr ctermbg=darkgrey
 
 set title
