@@ -156,9 +156,8 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
 set background=dark
-" let g:solarized_termtrans=1
+let g:solarized_termtrans=1
 colorscheme solarized
-" Solarized background strangeness fix
 highlight Normal ctermbg=none
 
 " TagList
