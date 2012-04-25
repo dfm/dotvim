@@ -151,6 +151,7 @@ nnoremap <leader>m :make<cr>
 "
 
 call pathogen#infect()
+call pathocen#helptags()
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
