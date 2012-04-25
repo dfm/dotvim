@@ -94,13 +94,7 @@ if v:version > 700 && has('gui_running')
 endif
 
 " Un-highlight search when we hit enter
-function! PressedEnter()
-    if &filetype == 'python'
-        " Update PyFlakes if it's a Python file
-        :PyflakesUpdate
-    end
-endfunction
-autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch \|call PressedEnter()<cr>
+autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch<cr>
 
 " Clean up whitespace at the ends of lines before writing
 autocmd BufWritePre * :%s/\s\+$//e
@@ -151,7 +145,10 @@ nnoremap <leader>m :make<cr>
 "
 
 call pathogen#infect()
-call pathocen#helptags()
+call pathogen#helptags()
+
+" Command-T
+nnoremap <leader>t :CommandT<CR>
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
@@ -166,7 +163,7 @@ colorscheme solarized
 highlight Normal ctermbg=none
 
 " TagList
-nnoremap <leader>t :TlistToggle<CR>
+nnoremap <leader>l :TlistToggle<CR>
 set tags=./tags;/                       " configure Ctags to use global project tags
 let Tlist_Use_Right_Window = 1          " only open taglist on the right
 let Tlist_Exit_OnlyWindow = 1           " automatically close taglist when we close the window
@@ -182,7 +179,7 @@ let python_highlight_all = 1
 augroup pythongroup
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    " autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+    autocmd BufWritePost *.py call Flake8()
 augroup END
 
 "

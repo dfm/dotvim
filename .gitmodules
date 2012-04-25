@@ -6,10 +6,6 @@
 	path = bundle/supertab
 	url = http://github.com/ervandew/supertab.git
 	ignore = dirty
-[submodule "bundle/pyflakes"]
-	path = bundle/pyflakes
-	url = http://github.com/mitechie/pyflakes-pathogen.git
-	ignore = dirty
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = http://github.com/msanders/snipmate.vim.git
@@ -38,3 +34,6 @@
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
 	ignore = dirty
+[submodule "bundle/flake8"]
+	path = bundle/flake8
+	url = https://github.com/nvie/vim-flake8.git
