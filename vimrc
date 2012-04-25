@@ -71,6 +71,7 @@ set wildignore+=*.o,*.so
 set wildignore+=*.pyc
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store?
+set wildignore+=venv
 
 " Show invisibles
 set listchars=tab:▸\ ,eol:¬
