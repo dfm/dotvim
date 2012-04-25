@@ -4,6 +4,7 @@
 cd ~/.vim
 git submodule update --init
 cd ~/.vim/bundle/command-t; rake make # For Command-T
+pip install flake8
 ```
 
 ## How to add a new plugin
