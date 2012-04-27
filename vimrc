@@ -180,11 +180,7 @@ let python_highlight_all = 1
 augroup pythongroup
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd BufWritePost *.py call Flake8()
 augroup END
-
-" Ignore errors in flake8.
-let g:flake8_ignore="E501,W293"
 
 "
 " ===============
