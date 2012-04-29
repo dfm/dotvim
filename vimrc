@@ -89,10 +89,8 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 " Spell check
-if v:version > 700 && has('gui_running')
-    set spell
-    setlocal spell spelllang=en_us
-endif
+set spell
+setlocal spell spelllang=en_us
 
 " Un-highlight search when we hit enter
 autocmd BufRead,BufNewFile * nnoremap <buffer><cr> :nohlsearch<cr>
