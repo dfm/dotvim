@@ -138,10 +138,10 @@ nnoremap <leader>. :w<cr>
 nnoremap <leader>m :make<cr>
 
 " Window resizing
-map <C-h> <C-w>>
-map <C-j> <C-W>-
-map <C-k>98 <C-W>+
-map <C-l> <C-w><
+noremap <C-h> <C-w>>
+noremap <C-j> <C-W>-
+noremap <C-k> <C-W>+
+noremap <C-l> <C-w><
 
 " Yank, comment, paste.
 nmap <leader>y Y\\\P
