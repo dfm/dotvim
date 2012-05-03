@@ -144,7 +144,8 @@ map <C-k>98 <C-W>+
 map <C-l> <C-w><
 
 " Yank, comment, paste.
-nmap <leader>y yy\\\p
+nmap <leader>y Y\\\P
+vmap <leader>y ygv\\P
 
 "
 " ===========
