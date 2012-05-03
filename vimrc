@@ -137,6 +137,15 @@ nnoremap <leader>. :w<cr>
 " Make with ,m
 nnoremap <leader>m :make<cr>
 
+" Window resizing
+map <C-h> <C-w>>
+map <C-j> <C-W>-
+map <C-k>98 <C-W>+
+map <C-l> <C-w><
+
+" Yank, comment, paste.
+nmap <leader>y yy\\\p
+
 "
 " ===========
 " * Plugins *
