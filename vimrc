@@ -4,6 +4,9 @@
 " ==================
 "
 
+filetype off
+call pathogen#infect()
+
 set nocompatible
 let mapleader=","
 
@@ -72,6 +75,7 @@ set wildignore+=*.pyc
 set wildignore+=*.sw?
 set wildignore+=*.DS_Store?
 set wildignore+=venv
+set wildignore+=*.fits,*.hdf5,*.h5
 
 " Show invisibles
 set listchars=tab:▸\ ,eol:¬
@@ -153,9 +157,6 @@ vmap <leader>y ygv\\P
 " ===========
 "
 
-call pathogen#infect()
-call pathogen#helptags()
-
 " Command-T
 nnoremap <leader>t :CommandT<CR>
 
@@ -188,6 +189,7 @@ let python_highlight_all = 1
 augroup pythongroup
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
+    set foldmethod=indent
 augroup END
 
 "

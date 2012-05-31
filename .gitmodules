@@ -24,17 +24,16 @@
 	ignore = dirty
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
+	url = http://github.com/kchmck/vim-coffee-script.git
 	ignore = dirty
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
-	ignore = dirty
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = https://github.com/wincent/Command-T.git
+	url = http://github.com/kien/ctrlp.vim.git
 	ignore = dirty
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	url = http://github.com/scrooloose/syntastic.git
 	ignore = dirty
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
