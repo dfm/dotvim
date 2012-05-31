@@ -33,6 +33,8 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = http://github.com/tpope/vim-fugitive.git
+	ignore = dirty
 [submodule "bundle/cmdt"]
 	path = bundle/cmdt
 	url = http://github.com/wincent/Command-T.git
+	ignore = dirty
