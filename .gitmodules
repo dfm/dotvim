@@ -26,10 +26,6 @@
 	path = bundle/vim-coffee-script
 	url = http://github.com/kchmck/vim-coffee-script.git
 	ignore = dirty
-[submodule "bundle/ctrlp"]
-	path = bundle/ctrlp
-	url = http://github.com/kien/ctrlp.vim.git
-	ignore = dirty
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = http://github.com/scrooloose/syntastic.git
