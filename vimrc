@@ -151,6 +151,9 @@ noremap <C-l> <C-w><
 nmap <leader>y Y\\\P
 vmap <leader>y ygv\\P
 
+" Remap <delete>.
+nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
+
 "
 " ===========
 " * Plugins *
