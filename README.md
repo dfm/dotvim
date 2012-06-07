@@ -22,6 +22,6 @@ Then, in `~/.vim/.gitmodules`, add the line `ignore = dirty` to each submodule.
 cd ~/.vim
 git pull origin
 git submodule foreach git pull origin master
-git commit *bundles* -m "Updated plug-ins"
+git commit *bundle* -m "Updated plug-ins"
 git push origin
 ```
