@@ -38,3 +38,7 @@
 	path = bundle/cmdt
 	url = http://github.com/wincent/Command-T.git
 	ignore = dirty
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = http://github.com/mileszs/ack.vim.git
+	ignore = dirty
