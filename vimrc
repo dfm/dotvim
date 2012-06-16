@@ -12,6 +12,7 @@ let mapleader=","
 
 " fuck yeah!
 command! W :w
+command! Q :q
 
 " No toolbar in the gui.
 set guioptions-=T
@@ -24,15 +25,8 @@ filetype on
 filetype plugin indent on
 set autoindent
 
-" Line numbers from @mynameisfiber.
+set number
 set numberwidth=3
-if exists("&relativenumber")
-    set relativenumber
-    autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
-else
-    set number
-endif
 highlight LineNr ctermbg=darkgrey
 
 set title
@@ -70,6 +64,8 @@ set wildmode=full
 set wildignore+=.hg,.git,.svn
 set wildignore+=*.aux,*.out,*.toc
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg
+set wildignore+=*.pdf
+set wildignore+=*.dat
 set wildignore+=*.o,*.so
 set wildignore+=*.pyc
 set wildignore+=*.sw?
