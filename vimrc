@@ -147,9 +147,6 @@ noremap <C-l> <C-w><
 nmap <leader>y Y\\\P
 vmap <leader>y ygv\\P
 
-" Remap <delete>.
-nnoremap <bs> :Ack! '\b<c-r><c-w>\b'<cr>
-
 "
 " ===========
 " * Plugins *
@@ -166,7 +163,7 @@ map <leader>g :GundoToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
-set background=dark
+set background=light
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Normal ctermbg=none
