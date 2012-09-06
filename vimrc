@@ -163,7 +163,7 @@ map <leader>g :GundoToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
-set background=light
+set background=dark
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Normal ctermbg=none
