@@ -164,6 +164,9 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
 set background=dark
+if has("gui_macvim")
+    set background=light
+endif
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Normal ctermbg=none
