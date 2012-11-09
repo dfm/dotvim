@@ -18,7 +18,7 @@ command! Q :q
 set guioptions-=T
 
 " Fortran?
-let fortran_free_source=1
+" let fortran_free_source=1
 
 syntax on
 filetype on
@@ -212,3 +212,28 @@ EOF
 au BufWritePost *.coffee CoffeeMake!
 
 
+"
+" =========
+" * LaTeX *
+" =========
+"
+
+au BufRead,BufNewFile *.tex set wrap textwidth=78
+
+
+" ==============
+" * Javascript *
+" ==============
+
+au BufRead,BufNewFile *.js set tabstop=2
+au BufRead,BufNewFile *.js set shiftwidth=2
+au BufRead,BufNewFile *.js set softtabstop=2
+
+
+" ===========
+" * Fortran *
+" ===========
+
+au BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 set tabstop=2
+au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set shiftwidth=2
+au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set softtabstop=2
