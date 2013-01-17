@@ -147,6 +147,17 @@ noremap <C-l> <C-w><
 nmap <leader>y Y\\\P
 vmap <leader>y ygv\\P
 
+
+"
+" ===========================
+" * Copy & Paste from Micha *
+" ===========================
+"
+
+vmap <leader>c ! pbcopy<CR>u
+nmap <leader>v :set paste<CR>! pbpaste<CR>:set nopaste<CR>
+
+
 "
 " ===========
 " * Plugins *
@@ -219,6 +230,16 @@ au BufWritePost *.coffee CoffeeMake!
 "
 
 au BufRead,BufNewFile *.tex set wrap textwidth=78
+
+
+" =================
+" * Documentation *
+" =================
+"
+
+au BufRead,BufNewFile *.md  set wrap textwidth=78
+au BufRead,BufNewFile *.markdown  set wrap textwidth=78
+au BufRead,BufNewFile *.rst  set wrap textwidth=78
 
 
 " ==============
