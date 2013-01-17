@@ -1,25 +1,6 @@
-snippet template
-	#!/usr/bin/env python
-	# encoding: utf-8
-	"""
-	${1}
-
-	"""
-
-	from __future__ import division
-
-	__all__ = ['']
-
-	import numpy as np
-
-	${2}
-
-	if __name__ == '__main__':
-	    pass
 snippet matplotlib
-	import matplotlib
-	matplotlib.use('Agg')
 	import matplotlib.pyplot as pl
+
 snippet #
 	#!/usr/bin/env python
 	# -*- coding: utf-8 -*-
@@ -28,3 +9,9 @@ snippet #
 	                        unicode_literals)
 
 	__all__ = []
+
+snippet __version__
+	__version__ = "${1:version}"
+	__author__ = "${2:Dan Foreman-Mackey (danfm@nyu.edu)}"
+	__copyright__ = "${3:Copyright 2013 Dan Foreman-Mackey}"
+	__contributors__ = []
