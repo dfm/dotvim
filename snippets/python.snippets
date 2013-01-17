@@ -20,8 +20,11 @@ snippet matplotlib
 	import matplotlib
 	matplotlib.use('Agg')
 	import matplotlib.pyplot as pl
-snippet #!
+snippet #
 	#!/usr/bin/env python
 	# -*- coding: utf-8 -*-
 
-	from __future__ import division, print_function, absolute_import, unicode_literals
+	from __future__ import (division, print_function, absolute_import,
+	                        unicode_literals)
+
+	__all__ = []
