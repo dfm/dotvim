@@ -199,6 +199,7 @@ let python_highlight_all = 1
 augroup pythongroup
     autocmd!
     autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType python set commentstring=#\ %s
     set foldmethod=indent
 augroup END
 
