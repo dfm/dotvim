@@ -201,6 +201,9 @@ augroup pythongroup
     " autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType python set commentstring=#\ %s
     set foldmethod=indent
+    au BufRead,BufNewFile *.py set tabstop=4
+    au BufRead,BufNewFile *.py set shiftwidth=4
+    au BufRead,BufNewFile *.py set softtabstop=4
 augroup END
 
 " Add the virtualenv's site-packages to vim path
@@ -259,3 +262,10 @@ au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 set tabstop=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set shiftwidth=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set softtabstop=2
+
+
+" ===========
+" * Fortran *
+" ===========
+
+au BufRead,BufNewFile *.go set filetype=go
