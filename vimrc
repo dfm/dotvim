@@ -244,6 +244,7 @@ au BufRead,BufNewFile *.tex set wrap textwidth=78
 au BufRead,BufNewFile *.md  set wrap textwidth=78
 au BufRead,BufNewFile *.markdown  set wrap textwidth=78
 au BufRead,BufNewFile *.rst  set wrap textwidth=78
+au BufRead,BufNewFile *.md set filetype=markdown
 
 
 " ==============
