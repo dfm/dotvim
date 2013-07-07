@@ -53,3 +53,4 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/MarcWeber/ultisnips.git
+	ignore = dirty
