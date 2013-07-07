@@ -50,3 +50,6 @@
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 	ignore = dirty
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/MarcWeber/ultisnips.git
