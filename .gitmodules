@@ -45,3 +45,12 @@
 [submodule "bundle/easymotion"]
 	path = bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+	ignore = dirty
+[submodule "bundle/utilisnips"]
+	path = bundle/utilisnips
+	url = https://github.com/MarcWeber/ultisnips.git
+	ignore = dirty
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+	ignore = dirty
