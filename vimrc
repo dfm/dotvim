@@ -174,7 +174,8 @@ map <leader>g :GundoToggle<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " Solarized colorscheme
-set background=dark
+" set background=dark
+set background=light
 if has("gui_macvim")
     set background=light
 endif
