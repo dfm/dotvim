@@ -4,7 +4,8 @@
 " ==================
 "
 
-filetype off
+filetype on
+let g:pathogen_disabled = []
 call pathogen#infect()
 
 set nocompatible
