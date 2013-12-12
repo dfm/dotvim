@@ -236,6 +236,7 @@ au BufWritePost *.coffee CoffeeMake!
 "
 
 au BufRead,BufNewFile *.tex set wrap textwidth=78
+au BufRead,BufNewFile *.tex set noai
 
 
 " =================
