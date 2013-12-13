@@ -1,14 +1,20 @@
-"
-" ==================
-" * Basic Settings *
-" ==================
-"
-
-filetype on
-let g:pathogen_disabled = []
-call pathogen#infect()
-
+filetype off
 set nocompatible
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-commentary'
+Bundle 'kien/ctrlp.vim'
+
+syntax on
+filetype plugin indent on
+set autoindent
+
 let mapleader=","
 
 " fuck yeah!
@@ -17,14 +23,6 @@ command! Q :q
 
 " No toolbar in the gui.
 set guioptions-=T
-
-" Fortran?
-" let fortran_free_source=1
-
-syntax on
-filetype on
-filetype plugin indent on
-set autoindent
 
 set number
 set numberwidth=3
@@ -165,15 +163,6 @@ nmap <leader>v :set paste<CR>! pbpaste<CR>:set nopaste<CR>
 " ===========
 "
 
-" Command-T
-nnoremap <leader>t :CommandT<CR>
-
-" Load the Gundo window
-map <leader>g :GundoToggle<CR>
-
-" SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-
 " Solarized colorscheme
 " set background=dark
 set background=light
@@ -184,12 +173,15 @@ let g:solarized_termtrans=1
 colorscheme solarized
 highlight Normal ctermbg=none
 
-" TagList
-nnoremap <leader>l :TlistToggle<CR>
-set tags=./tags;/                       " configure Ctags to use global project tags
-let Tlist_Use_Right_Window = 1          " only open taglist on the right
-let Tlist_Exit_OnlyWindow = 1           " automatically close taglist when we close the window
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 "
 " ==========
 " * Python *
@@ -220,14 +212,6 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
-
-"
-" ===============
-" * Coffeescript *
-" ================
-"
-au BufWritePost *.coffee CoffeeMake!
-
 
 "
 " =========
@@ -266,10 +250,3 @@ au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 set tabstop=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set shiftwidth=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set softtabstop=2
-
-
-" ===========
-" * Fortran *
-" ===========
-
-au BufRead,BufNewFile *.go set filetype=go
