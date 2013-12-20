@@ -12,6 +12,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+Bundle 'tomtom/tlib_vim'
 Bundle 'kien/ctrlp.vim'
 
 syntax on
@@ -177,9 +178,7 @@ colorscheme solarized
 highlight Normal ctermbg=none
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:snippets_dir='~/.vim/snippets'
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
