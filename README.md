@@ -1,27 +1,11 @@
 ## First time
 
+From the command line
 ```bash
-cd ~/.vim
-git submodule update --init
-cd ~/.vim/bundle/command-t; rake make # For Command-T
-pip install flake8 jedi
+pip install jedi
 ```
 
-## How to add a new plugin
-
-```bash
-cd ~/.vim
-git submodule add bundle_url bundle/bundle_name
-git submodule init
-```
-Then, in `~/.vim/.gitmodules`, add the line `ignore = dirty` to each submodule.
-
-## Updating plugins
-
-```bash
-cd ~/.vim
-git pull origin
-git submodule foreach git pull origin master
-git commit *bundle* -m "Updated plug-ins"
-git push origin
+From inside vim
+```viml
+:BundleInstall
 ```
