@@ -5,10 +5,13 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Valloric/YouCompleteMe'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'davidhalter/jedi-vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-commentary'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 
 syntax on
