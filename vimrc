@@ -160,6 +160,29 @@ vmap <leader>y ygv\\P
 vmap <leader>c ! pbcopy<CR>u
 nmap <leader>v :set paste<CR>! pbpaste<CR>:set nopaste<CR>
 
+"
+" =========
+" * Prose *
+" =========
+"
+" http://contsys.tumblr.com/post/491802835/vim-soft-word-wrap
+"
+" Wrap prose the way I want it.
+noremap <leader>w vasgq
+
+
+function Prose ()
+  set formatoptions=1
+  set linebreak
+  set wrap
+  set nolist
+  set display=lastline
+  " set breakat="\ |@-+;:,./?^I"
+  nnoremap j gj
+  nnoremap k gk
+  vnoremap j gj
+  vnoremap k gk
+endfunction
 
 "
 " ===========
@@ -223,6 +246,7 @@ EOF
 
 au BufRead,BufNewFile *.tex set wrap textwidth=78
 au BufRead,BufNewFile *.tex set noai
+au BufRead,BufNewFile *.tex call Prose()
 
 
 " =================
