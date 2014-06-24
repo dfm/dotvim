@@ -1,22 +1,30 @@
+" Vundle
+
 filetype off
 set nocompatible
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-commentary'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'ervandew/supertab'
-Bundle 'tomtom/tlib_vim'
-Bundle 'kien/ctrlp.vim'
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
+Plugin 'tomtom/tlib_vim'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" End Vundle
 
 syntax on
-filetype plugin indent on
 set autoindent
 
 let mapleader=","
@@ -224,19 +232,6 @@ augroup pythongroup
     au BufRead,BufNewFile *.py set shiftwidth=4
     au BufRead,BufNewFile *.py set softtabstop=4
 augroup END
-
-" Add the virtualenv's site-packages to vim path
-" http://sontek.net/turning-vim-into-a-modern-python-ide
-py << EOF
-import os.path
-import sys
-import vim
-if 'VIRTUAL_ENV' in os.environ:
-    project_base_dir = os.environ['VIRTUAL_ENV']
-    sys.path.insert(0, project_base_dir)
-    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-    execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 "
 " =========
