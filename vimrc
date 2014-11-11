@@ -9,25 +9,45 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-commentary'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'davidhalter/jedi-vim'
+
+" Code completion and snippets.
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'ervandew/supertab'
-Plugin 'tomtom/tlib_vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+
+Plugin 'tpope/vim-commentary'
+
+" Plugin 'ervandew/supertab'
+" Plugin 'tomtom/tlib_vim'
+" Plugin 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
 " End Vundle
+"
+set encoding=utf8
 
 syntax on
 set autoindent
 
 let mapleader=","
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:UltiSnipsExpandTrigger="<leader>m"
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
 
 " fuck yeah!
 command! W :w
@@ -180,7 +200,7 @@ noremap <leader>w vasgq
 
 
 function Prose ()
-  set formatoptions=1
+  set formatoptions+=t
   set linebreak
   set wrap
   set nolist
