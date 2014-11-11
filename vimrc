@@ -9,8 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'altercation/vim-colors-solarized'
-" Plugin 'MarcWeber/vim-addon-mw-utils'
-" Plugin 'davidhalter/jedi-vim'
 
 " Code completion and snippets.
 Bundle 'Valloric/YouCompleteMe'
@@ -19,11 +17,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic'
 
 Plugin 'tpope/vim-commentary'
-
-" Plugin 'ervandew/supertab'
-" Plugin 'tomtom/tlib_vim'
-" Plugin 'kien/ctrlp.vim'
-Bundle 'bling/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -151,13 +144,13 @@ nnoremap <leader>' viw<esc>a'<esc>hviwo<esc>i'<esc>lel
 
 " A better mapping for leaving insert mode
 inoremap jk <esc>
-inoremap <esc> <nop>
+" inoremap <esc> <nop>
 
-" Train my muscles to forget arrow keys!
-noremap <Left>  <nop>
-noremap <Right> <nop>
-noremap <Up>    <nop>
-noremap <Down>  <nop>
+" " Train my muscles to forget arrow keys!
+" noremap <Left>  <nop>
+" noremap <Right> <nop>
+" noremap <Up>    <nop>
+" noremap <Down>  <nop>
 
 " jump to beginning/end of lines
 noremap H ^
@@ -219,11 +212,8 @@ endfunction
 "
 
 " Solarized colorscheme
-" set background=dark
+set t_Co=256
 set background=light
-if has("gui_macvim")
-    set background=light
-endif
 let g:solarized_termtrans=1
 colorscheme solarized
 highlight Normal ctermbg=none
