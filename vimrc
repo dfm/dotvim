@@ -11,10 +11,13 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
 " Code completion and snippets.
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic'
+Plugin 'hynek/vim-python-pep8-indent'
 
 Plugin 'tpope/vim-commentary'
 
@@ -232,6 +235,8 @@ let g:ctrlp_cmd = 'CtrlP'
 "
 
 let python_highlight_all = 1
+let g:pymode_rope = 0
+let g:pymode_rope_completion = 0
 
 augroup pythongroup
     autocmd!
@@ -281,3 +286,4 @@ au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 set tabstop=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set shiftwidth=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set softtabstop=2
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
