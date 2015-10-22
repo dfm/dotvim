@@ -18,12 +18,12 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/syntastic'
 Plugin 'hynek/vim-python-pep8-indent'
-
 Plugin 'tpope/vim-commentary'
+Plugin 'junegunn/goyo.vim'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
 
 " End Vundle
 "
@@ -34,7 +34,6 @@ set autoindent
 
 let mapleader=","
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 let g:UltiSnipsExpandTrigger="<leader>m"
 
 " Return to last edit position when opening files (You want this!)
@@ -286,4 +285,7 @@ au BufRead,BufNewFile *.js set softtabstop=2
 au BufRead,BufNewFile *.f,*.f96,*.f90,*.f66,*.f77 set tabstop=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set shiftwidth=2
 au BufRead,BufNewFile *.f,*.f95,*.f90,*.f66,*.f77 set softtabstop=2
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
