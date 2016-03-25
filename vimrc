@@ -13,6 +13,7 @@ Plugin 'altercation/vim-colors-solarized'
 " Code completion and snippets.
 " Bundle 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -41,6 +42,7 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
 " Remember info about open buffers on close
 set viminfo^=%
 
@@ -195,16 +197,16 @@ noremap <leader>w vasgq
 
 
 function Prose ()
-  set formatoptions+=t
-  set linebreak
-  set wrap
-  set nolist
-  set display=lastline
-  " set breakat="\ |@-+;:,./?^I"
-  nnoremap j gj
-  nnoremap k gk
-  vnoremap j gj
-  vnoremap k gk
+    set formatoptions+=t
+    set linebreak
+    set wrap
+    set nolist
+    set display=lastline
+    " set breakat="\ |@-+;:,./?^I"
+    nnoremap j gj
+    nnoremap k gk
+    vnoremap j gj
+    vnoremap k gk
 endfunction
 
 "
@@ -212,6 +214,18 @@ endfunction
 " * Plugins *
 " ===========
 "
+
+" Neocomplete
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 
 " Solarized colorscheme
 set t_Co=256
@@ -223,29 +237,11 @@ highlight Normal ctermbg=none
 " Snippets
 let g:snippets_dir='~/.vim/snippets'
 
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-
-"
 " ==========
 " * Python *
 " ==========
-"
 
-let python_highlight_all = 1
-let g:pymode_rope = 0
-let g:pymode_rope_completion = 0
-
-augroup pythongroup
-    autocmd!
-    " autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType python set commentstring=#\ %s
-    set foldmethod=indent
-    au BufRead,BufNewFile *.py set tabstop=4
-    au BufRead,BufNewFile *.py set shiftwidth=4
-    au BufRead,BufNewFile *.py set softtabstop=4
-augroup END
+let g:syntastic_python_flake8_args='--ignore=E302'
 
 "
 " =========
